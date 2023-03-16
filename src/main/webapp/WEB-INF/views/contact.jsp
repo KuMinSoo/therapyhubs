@@ -20,7 +20,9 @@
         <link href="resources/css/styles.css" rel="stylesheet" />
     </head>
     <body>
+    
 <c:import url="/top"/>
+<script type="text/javascript" src="resources/js/userCheck.js"></script>
         <!-- Main Content-->
         <main class="mb-4">
             <div class="container px-4 px-lg-5">
@@ -35,29 +37,61 @@
                             <!-- To make this form functional, sign up at-->
                             <!-- https://startbootstrap.com/solution/contact-forms-->
                             <!-- to get an API token!-->
-                            <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                            <form name="mf" action="join" method="post" enctype="multipartform-data">
                                 <div class="form-floating">
-                                    <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
-                                    <label for="name">Name</label>
+                                    <input class="form-control" id="name" name="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
+                                    <label for="name">이름</label>
                                     <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
                                 </div>
                                 <div class="form-floating">
+                                    <input class="form-control" id="userid"  type="text" placeholder="Enter your name..." data-sb-validations="required" />
+                                    <label for="userid">아이디</label>
+                                    <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                                </div>
+                               <div class="form-floating">
+                                    <input class="form-control" id="pwd" name="pwd"  type="text" placeholder="Enter your name..." data-sb-validations="required" />
+                                    <label for="pwd">비밀번호</label>
+                                    <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" id="hp" name="hp"  type="text" placeholder="Enter your name..." data-sb-validations="required" />
+                                    <label for="hp">전화번호</label>
+                                    <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" id="age" name="age"  type="text" placeholder="Enter your name..." data-sb-validations="required" />
+                                    <label for="age">나이</label>
+                                    <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                                </div>
+                                <div class="form-floating" style="height:40;margin-top:20px;margin-bottom:10px;color:gray">
+                                  성별&emsp;남자 <input type="radio" name="gender" id="male" value="M">&emsp;
+                                    여자<label for="male"></label>
+                                    <input type="radio" name="gender" id="female" value="F">
+                                    <label for="female"></label>          
+                                </div>
+                                <hr>
+                               <div class="form-floating">
+                                    <input class="form-control" id="post" name="post"  type="text" placeholder="Enter your name..." data-sb-validations="required" />
+                                    <label for="post">우편번호</label>
+                                    <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                                </div>                               
+                                <div class="form-floating">
+                                    <input class="form-control" id="addr1" name="addr1"  type="text" placeholder="Enter your name..." data-sb-validations="required" />
+                                    <label for="addr1">주소1</label>
+                                    <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" id="addr2" name="addr2"  type="text" placeholder="Enter your name..." data-sb-validations="required" />
+                                    <label for="addr2">주소2</label>
+                                    <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                                </div>              
+                                <div class="form-floating">
                                     <input class="form-control" id="email" type="email" placeholder="Enter your email..." data-sb-validations="required,email" />
-                                    <label for="email">Email address</label>
+                                    <label for="email">이메일</label>
                                     <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
                                     <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
                                 </div>
-                                <div class="form-floating">
-                                    <input class="form-control" id="phone" type="tel" placeholder="Enter your phone number..." data-sb-validations="required" />
-                                    <label for="phone">Phone Number</label>
-                                    <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
-                                </div>
-                                <div class="form-floating">
-                                    <textarea class="form-control" id="message" placeholder="Enter your message here..." style="height: 12rem" data-sb-validations="required"></textarea>
-                                    <label for="message">Message</label>
-                                    <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
-                                </div>
-                                <br />
+
                                 <!-- Submit success message-->
                                 <!---->
                                 <!-- This is what your users will see when the form-->
@@ -70,13 +104,8 @@
                                         <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
                                     </div>
                                 </div>
-                                <!-- Submit error message-->
-                                <!---->
-                                <!-- This is what your users will see when there is-->
-                                <!-- an error submitting the form-->
-                                <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
-                                <!-- Submit Button-->
-                                <button class="btn btn-primary text-uppercase disabled" id="submitButton" type="submit">Send</button>
+                        
+                                <button class="btn btn-primary text-uppercase" id="submitButton" type="button" onclick="member_check()">회원가입</button>
                             </form>
                         </div>
                     </div>
